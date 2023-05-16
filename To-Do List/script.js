@@ -18,10 +18,6 @@ function ajouter(event) {
     supprimer.className = "supprimer"
     supprimer.innerText = "Supprimer la tâche"
 
-    let modifier = document.createElement("button");
-    modifier.className = "modifier"
-    modifier.innerText = "Modifier"
-
     tache = document.getElementById("tache").value;
 
 
@@ -29,7 +25,6 @@ function ajouter(event) {
     message.append(check);
     message.append(tache);
     message.append(supprimer);
-    message.append(modifier);
 
 
 
@@ -60,14 +55,11 @@ document.addEventListener("click", function (event) {
 
 //action bouton supprimer
 document.addEventListener("click", function (event) {
-        let listSuppr = document.getElementsByClassName("supprimer");
-        for (let i = 0; i < listSuppr.length; i++) {
-            let element = listSuppr[i];
-            element.addEventListener("click", function() {
-                element.parentElement.remove();
-             });
-        }
+    let listSuppr = document.getElementsByClassName("supprimer");
+    for (let i = 0; i < listSuppr.length; i++) {
+        let element = listSuppr[i];
+        element.addEventListener("click", function () {
+            element.parentElement.remove();
+        });
+    }
 });
-
-
-//à l'appuie du bouton supprimer
